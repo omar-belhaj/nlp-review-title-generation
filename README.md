@@ -4,7 +4,11 @@ NLP course project by Omar Belhaj, Université Paris Dauphine-PSL.
 
 **This is a text summarization task.** The model reads an Amazon food review and writes a short title that summarizes it in a few words, keeping both the subject and the opinion. This is extreme abstractive summarization: the summary is around 3 words long, and the model generates it word by word instead of copying a sentence from the review.
 
-Read the full [report](Report.pdf) for the dataset, architecture, training procedure, results and limitations.
+## Architecture
+
+![Pipeline](screenshots/pipeline.png)
+
+Read the full [report](Report.pdf) and the [presentation](Presentation.pdf) for the dataset, architecture, training procedure, results and limitations.
 
 ```
 Review   : This tea is not good at all. It tastes like nothing and I would not recommend it.
@@ -99,7 +103,8 @@ Remaining weaknesses include contrast ("terrible taste" for a tasty product), re
 | `model/` | Weights of the final model (second training run), vocabularies and configuration |
 | `results/` | Metrics, run outputs, figures and the manual annotation |
 | `scripts/` | Rebuilds the manual annotation sheet without training |
-| `docs/report/` | Short LaTeX report (`report.tex`, `report.pdf`) |
+| `Report.pdf` | Short LaTex report |
+| `Presentation.pdf` | Canva presentation of the project |
 | `docs/screenshots/` | Demo screenshots used above |
 
 ## Run it
