@@ -1,0 +1,245 @@
+Training reviews: 47,762 -> 150,000
+
+=== imp_balanced | 6,626,422 parameters | 47,762 reviews ===
+epoch  1 | train 5.102 | val 4.523 | 26s
+epoch  2 | train 4.366 | val 4.263 | 26s
+epoch  3 | train 3.985 | val 4.135 | 24s
+epoch  4 | train 3.719 | val 4.069 | 25s
+epoch  5 | train 3.514 | val 4.048 | 25s
+epoch  6 | train 3.359 | val 4.020 | 25s
+epoch  7 | train 3.200 | val 4.022 | 25s
+epoch  8 | train 3.077 | val 4.041 | 25s
+epoch  9 | train 2.960 | val 4.015 | 24s
+epoch 10 | train 2.889 | val 4.013 | 25s
+epoch 11 | train 2.831 | val 4.020 | 24s
+epoch 12 | train 2.772 | val 4.036 | 24s
+epoch 13 | train 2.714 | val 4.021 | 27s
+Early stopping at epoch 13
+
+=== imp_copy | 6,627,063 parameters | 47,762 reviews ===
+epoch  1 | train 4.592 | val 4.097 | 28s
+epoch  2 | train 4.067 | val 3.884 | 27s
+epoch  3 | train 3.825 | val 3.772 | 27s
+epoch  4 | train 3.645 | val 3.707 | 27s
+epoch  5 | train 3.497 | val 3.675 | 27s
+epoch  6 | train 3.371 | val 3.677 | 27s
+epoch  7 | train 3.258 | val 3.675 | 27s
+epoch  8 | train 3.115 | val 3.673 | 27s
+epoch  9 | train 3.055 | val 3.681 | 27s
+epoch 10 | train 3.003 | val 3.685 | 28s
+epoch 11 | train 2.930 | val 3.698 | 28s
+Early stopping at epoch 11
+
+=== imp_more_data | 6,626,422 parameters | 150,000 reviews ===
+epoch  1 | train 4.567 | val 3.964 | 75s
+epoch  2 | train 3.918 | val 3.712 | 75s
+epoch  3 | train 3.676 | val 3.590 | 75s
+epoch  4 | train 3.523 | val 3.533 | 75s
+epoch  5 | train 3.413 | val 3.489 | 75s
+epoch  6 | train 3.327 | val 3.470 | 75s
+epoch  7 | train 3.256 | val 3.453 | 75s
+epoch  8 | train 3.196 | val 3.443 | 77s
+epoch  9 | train 3.142 | val 3.434 | 76s
+epoch 10 | train 3.098 | val 3.434 | 76s
+epoch 11 | train 3.056 | val 3.437 | 76s
+epoch 12 | train 2.957 | val 3.421 | 76s
+epoch 13 | train 2.922 | val 3.420 | 76s
+epoch 14 | train 2.898 | val 3.419 | 75s
+epoch 15 | train 2.875 | val 3.430 | 76s
+
+=== imp_combined | 6,627,063 parameters | 150,000 reviews ===
+epoch  1 | train 4.190 | val 3.758 | 84s
+epoch  2 | train 3.675 | val 3.585 | 84s
+epoch  3 | train 3.463 | val 3.531 | 84s
+epoch  4 | train 3.328 | val 3.498 | 85s
+epoch  5 | train 3.229 | val 3.486 | 84s
+epoch  6 | train 3.147 | val 3.468 | 84s
+epoch  7 | train 3.072 | val 3.463 | 85s
+epoch  8 | train 3.015 | val 3.453 | 85s
+epoch  9 | train 2.970 | val 3.456 | 84s
+epoch 10 | train 2.920 | val 3.457 | 84s
+epoch 11 | train 2.851 | val 3.435 | 84s
+epoch 12 | train 2.819 | val 3.441 | 84s
+epoch 13 | train 2.783 | val 3.443 | 85s
+epoch 14 | train 2.758 | val 3.436 | 84s
+Early stopping at epoch 14
+
+VALIDATION (use this table to choose)
+                                                             0             2         4              6             8
+variant                          bilstm_attention (reference)  imp_balanced  imp_copy  imp_more_data  imp_combined
+ROUGE-1                                                  0.15         0.143     0.162          0.175         0.177
+ROUGE-2                                                 0.037         0.033     0.046          0.048         0.052
+BLEU-2                                                  5.681         4.978     6.175          6.813         6.986
+exact match                                             0.015         0.015      0.02           0.02         0.023
+distinct titles                                         0.225         0.242     0.368          0.339          0.41
+top title share                                         0.107         0.134      0.14          0.087         0.095
+sentiment balanced acc                                  0.772         0.796     0.722           0.81         0.851
+negative titled positive                                0.353         0.273     0.468          0.307          0.21
+uses word outside title vocab                             0.0           0.0     0.023            0.0         0.032
+ROUGE-1, refs with unknown word                         0.092         0.082     0.106           0.11         0.118
+mean length                                             3.029         2.974     2.739          2.873         2.879
+best epoch                                                  9            10         8             14            11
+epochs run                                                 12            13        11             15            14
+seconds per epoch                                        24.7          25.0      27.4           75.5          84.2
+
+Best on validation ROUGE-1: imp_combined
+
+TEST (final report only)
+                                                             1             3         5              7             9
+variant                          bilstm_attention (reference)  imp_balanced  imp_copy  imp_more_data  imp_combined
+ROUGE-1                                                 0.159         0.148     0.163           0.18         0.183
+ROUGE-2                                                 0.043         0.038     0.047          0.054         0.057
+BLEU-2                                                  6.108         5.328     6.262          7.254           7.4
+exact match                                             0.018         0.017     0.019           0.02         0.024
+distinct titles                                         0.231         0.247     0.364          0.347         0.419
+top title share                                         0.112          0.14     0.148          0.087         0.099
+sentiment balanced acc                                  0.754         0.783     0.725          0.809          0.83
+negative titled positive                                0.397          0.31     0.467          0.316         0.255
+uses word outside title vocab                             0.0           0.0     0.026            0.0         0.036
+ROUGE-1, refs with unknown word                         0.094         0.083     0.105          0.115         0.122
+mean length                                             3.037         2.965     2.736          2.921         2.873
+best epoch                                                  9            10         8             14            11
+epochs run                                                 12            13        11             15            14
+seconds per epoch                                        24.7          25.0      27.4           75.5          84.2
+
+   variant minus bilstm_attention  metric  difference  CI 2.5%  CI 97.5%  CI excludes 0
+0                   imp_balanced  rouge1     -0.0107  -0.0153   -0.0063           True
+1                   imp_balanced  rouge2     -0.0052  -0.0086   -0.0018           True
+2                       imp_copy  rouge1      0.0047  -0.0005    0.0098          False
+3                       imp_copy  rouge2      0.0044   0.0008    0.0083           True
+4                  imp_more_data  rouge1      0.0215   0.0168    0.0265           True
+5                  imp_more_data  rouge2      0.0107   0.0069    0.0151           True
+6                   imp_combined  rouge1      0.0245   0.0189    0.0298           True
+7                   imp_combined  rouge2      0.0138   0.0096    0.0182           True
+
+[positive] This coffee is smooth and rich with a hint of chocolate. I will definitely buy it again.
+  bilstm_attention  : great coffee
+  imp_balanced      : great coffee
+  imp_copy          : smooth and delicious
+  imp_more_data     : smooth rich smooth
+  imp_combined      : great coffee
+
+[negative] The dog food arrived with a broken bag and my dog refused to eat it. Very disappointed.
+  bilstm_attention  : dog food
+  imp_balanced      : dog wouldn't eat
+  imp_copy          : dog food
+  imp_more_data     : dog food
+  imp_combined      : dog hated it
+
+[negation] This tea is not good at all. It tastes like nothing and I would not recommend it.
+  bilstm_attention  : not as good as the tea
+  imp_balanced      : not that good
+  imp_copy          : not the best
+  imp_more_data     : not good
+  imp_combined      : not good
+
+[contrast] I expected these chips to be terrible but they are actually really tasty and not too salty.
+  bilstm_attention  : not bad
+  imp_balanced      : too sweet
+  imp_copy          : not bad
+  imp_more_data     : tasty but salty
+  imp_combined      : terrible taste
+
+[mixed] The flavor is great, but the price is far too high for such a small box.
+  bilstm_attention  : good but not great
+  imp_balanced      : good but not great
+  imp_copy          : good but not great
+  imp_more_data     : great flavor but small
+  imp_combined      : good flavor but too high
+
+[neutral] It's okay. Not bad, not great, just an average cereal.
+  bilstm_attention  : not as good as i remember
+  imp_balanced      : not bad
+  imp_copy          : it's okay
+  imp_more_data     : not as good as i thought
+  imp_combined      : it's okay
+
+[very short] Love this honey, so good!
+  bilstm_attention  : best honey ever
+  imp_balanced      : best honey ever
+  imp_copy          : love this honey
+  imp_more_data     : honey honey
+  imp_combined      : great honey
+
+[rare words] This Ethiopian yirgacheffe has wonderful floral and bergamot notes.
+  bilstm_attention  : wonderful product
+  imp_balanced      : great product
+  imp_copy          : wonderful product
+  imp_more_data     : great flavor
+  imp_combined      : great ethiopian
+
+[out of domain] The laptop screen stopped working after two days and customer service never replied.
+  bilstm_attention  : great product
+  imp_balanced      : poor customer service
+  imp_copy          : customer service
+  imp_more_data     : great customer service
+  imp_combined      : customer service
+
+================================================================================
+Test reviews whose reference contains a word outside the title vocabulary
+
+[5 stars] With 2 Chiclets per very small box, this is perfect for the purse, pocket or car. Product stays fresher this way and less spillage/loss. Would make a nice Hallo
+  reference         : perfect for purse or car
+  bilstm_attention  : great product
+  imp_balanced      : great product
+  imp_copy          : great product
+  imp_more_data     : great value
+  imp_combined      : great product
+
+[5 stars] Newman's treats make my dog smile. She loves them so much that she'll do several tricks for one treat: snuggle, paw-paw, and kiss-kiss. The 6-pack is a good val
+  reference         : easy smiles
+  bilstm_attention  : my dog loves these
+  imp_balanced      : great dog treat
+  imp_copy          : newman's own treats
+  imp_more_data     : great treats
+  imp_combined      : my dog loves them
+
+[5 stars] Yes, I still love the older Tazo Awake tea over the more<br />expensive new Tazo Awake tea. I don't taste much difference<br />from the old to the new. That is 
+  reference         : tazo awake tea oldie but goodie
+  bilstm_attention  : great tea
+  imp_balanced      : this is the tea is not the best tea
+  imp_copy          : good deal
+  imp_more_data     : great tea
+  imp_combined      : older tea
+
+[5 stars] Just so you know, this is a LOT of bay leaves. Like a restaurant-sized bag of them. I figured since they're about $5 for a tiny jar at the store, and this being
+  reference         : holy bay leaves batman
+  bilstm_attention  : great deal
+  imp_balanced      : a decent way to get a day
+  imp_copy          : a little bay of bay
+  imp_more_data     : great value
+  imp_combined      : great product but
+
+[5 stars] I have been buying these two packs of Maxwell House coffee for several years.....several varieties were offered on subscribe and save....french roach, south pac
+  reference         : bummer amazon is limiting offerings now
+  bilstm_attention  : great coffee
+  imp_balanced      : great coffee
+  imp_copy          : great coffee
+  imp_more_data     : great coffee
+  imp_combined      : maxwell house coffee
+
+[5 stars] One tablespoon of Elderberry Extract plus one dropper-full of Echinacea taken at the first sign of illness has headed off many an illness for myself and many me
+  reference         : elderberry extract echinacea extract stronger immune system
+  bilstm_attention  : great for the price
+  imp_balanced      : great for a single serving
+  imp_copy          : great stuff
+  imp_more_data     : great product
+  imp_combined      : great for a extract
+
+[4 stars] This is a great addition to a baker's kitchen.  It can be easily measured out to the precise amount needed, then stored for a very long time.  It is not necessa
+  reference         : yeast rising
+  bilstm_attention  : great seasoning
+  imp_balanced      : great value
+  imp_copy          : great addition to find
+  imp_more_data     : great product
+  imp_combined      : great addition to kitchen
+
+[1 stars] This item arrived and I was surprised at just how thin the actual jerky was--like paper.  My dog was not at all interested after several tries and I ended up ha
+  reference         : overpriced and unsubstantial
+  bilstm_attention  : not as good as i expected
+  imp_balanced      : not as good as i expected
+  imp_copy          : not as good as the dog
+  imp_more_data     : not what i expected
+  imp_combined      : not what i expected
+
+Results zip updated: nlp_project_results.zip

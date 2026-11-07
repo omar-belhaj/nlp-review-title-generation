@@ -1,0 +1,113 @@
+[positive] This coffee is smooth and rich with a hint of chocolate. I will definitely buy it again.
+  unknown words: none
+  lstm_baseline     : great coffee
+  lstm_attention    : great coffee
+  bilstm_attention  : great coffee
+  bilstm_attention (beam): great coffee
+
+[negative] The dog food arrived with a broken bag and my dog refused to eat it. Very disappointed.
+  unknown words: none
+  lstm_baseline     : not as good as the other mtr
+  lstm_attention    : dog likes it
+  bilstm_attention  : dog food
+  bilstm_attention (beam): dog food
+
+[negation] This tea is not good at all. It tastes like nothing and I would not recommend it.
+  unknown words: none
+  lstm_baseline     : not bad
+  lstm_attention    : not bad
+  bilstm_attention  : not as good as the tea
+  bilstm_attention (beam): good tea
+
+[contrast] I expected these chips to be terrible but they are actually really tasty and not too salty.
+  unknown words: none
+  lstm_baseline     : not as good as the other mtr
+  lstm_attention    : tasty but not great
+  bilstm_attention  : not bad
+  bilstm_attention (beam): not bad
+
+[mixed] The flavor is great, but the price is far too high for such a small box.
+  unknown words: none
+  lstm_baseline     : good but not great
+  lstm_attention    : great flavor
+  bilstm_attention  : good but not great
+  bilstm_attention (beam): good but not great
+
+[neutral] It's okay. Not bad, not great, just an average cereal.
+  unknown words: none
+  lstm_baseline     : not as good as the other mtr
+  lstm_attention    : not bad but not great
+  bilstm_attention  : not as good as i remember
+  bilstm_attention (beam): not as good as i remember
+
+[very short] Love this honey, so good!
+  unknown words: none
+  lstm_baseline     : great product
+  lstm_attention    : love this honey
+  bilstm_attention  : best honey ever
+  bilstm_attention (beam): best honey ever
+
+[rare words] This Ethiopian yirgacheffe has wonderful floral and bergamot notes.
+  unknown words: none
+  lstm_baseline     : great product
+  lstm_attention    : great product
+  bilstm_attention  : wonderful product
+  bilstm_attention (beam): excellent product
+
+[out of domain] The laptop screen stopped working after two days and customer service never replied.
+  unknown words: laptop
+  lstm_baseline     : not as good as the other mtr
+  lstm_attention    : great product
+  bilstm_attention  : great product
+  bilstm_attention (beam): great product
+
+================================================================================ 
+Random test reviews
+
+[2 stars] While waiting for my Amazon order to arrive, I bought a lemon-flavored stevia in a glycerin/alcohol base and was quite pleased with both the flavor and the sweetness - it made a nice lightly flavored 
+  reference         : weak flavor in this water based item
+  lstm_baseline     : good but not great
+  lstm_attention    : not what i expected
+  bilstm_attention  : great tasting water
+
+[3 stars] I ordered three boxes for my british husbands bday. They called to tell me one box was backordered so I said send the two ou have and cancel the third. They never refunded back my money for the third 
+  reference         : good but amazon ripped me off
+  lstm_baseline     : not what i expected
+  lstm_attention    : great product but shipping took
+  bilstm_attention  : not the same as described
+
+[1 stars] This Coca tea is nothing special. No extra energy or even aroma also, did nothing to help with my asthma.
+  reference         : just another tea
+  lstm_baseline     : not bad
+  lstm_attention    : great tea
+  bilstm_attention  : great tea
+
+[5 stars] These nut bars truly taste great, and the "30% bigger" size is just the right size for me for a snack.  They also strike the perfect balance between chewy and crunchy -- there's no gooey-ness, and the
+  reference         : delicious and well sized
+  lstm_baseline     : great product
+  lstm_attention    : great taste
+  bilstm_attention  : great tasting snack
+
+[5 stars] A candy one cannot buy over the shelf, at least here anyway. Our children loved them. Will buy more. Fast shipping, product as expected.
+  reference         : zagnut candy bars
+  lstm_baseline     : great product
+  lstm_attention    : great candy
+  bilstm_attention  : candy candy
+
+[5 stars] Very happpy to find that Amazon is making this product available. I consider it the best of the sugar substitutes but you can't find it in the stores anymore.
+  reference         : sugar twin
+  lstm_baseline     : great product
+  lstm_attention    : great product
+  bilstm_attention  : great product
+
+[2 stars] I got these in hopes that I could replace some of my snacking habits with something a little healthier.  First of all, I love edamame in its normal form, cooking them like lima beans.  Unfortunately, 
+  reference         : possibilities just okay
+  lstm_baseline     : not bad
+  lstm_attention    : not what i expected
+  bilstm_attention  : i didn't like these beans
+
+[5 stars] I love this product. My family finished it within one week. It is so good, the taste is great. I greatly recommend it to anyone who l loves honey.
+  reference         : very great product
+  lstm_baseline     : great product
+  lstm_attention    : great product
+  bilstm_attention  : great product

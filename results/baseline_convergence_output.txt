@@ -1,0 +1,22 @@
+Baseline retrained with a limit of 30 epochs
+Epochs trained: 20 | best epoch: 17 | best val loss: 4.007
+
+                        lstm_baseline (15 epochs)  lstm_baseline_30ep  bilstm_attention
+ROUGE-1                                     0.105               0.106             0.159
+ROUGE-2                                     0.021               0.020             0.043
+ROUGE-L                                     0.104               0.104             0.156
+BLEU-2                                      3.027               2.826             6.108
+BLEU-4                                      0.889               0.750             2.195
+exact match                                 0.011               0.012             0.018
+mean length                                 3.052               2.697             3.037
+distinct titles                             0.005               0.007             0.231
+top title share                             0.456               0.496             0.112
+sentiment agreement                         0.893               0.891             0.861
+sentiment balanced acc                      0.822               0.822             0.754
+loss                                        4.029               4.021             3.862
+perplexity                                 56.196              55.751            47.552
+token accuracy                              0.334               0.336             0.345
+
+lstm_attention minus lstm_baseline_30ep, ROUGE-1: +0.0474 (95% CI +0.0426 to +0.0530)
+bilstm_attention minus lstm_baseline_30ep, ROUGE-1: +0.0532 (95% CI +0.0480 to +0.0590)
+Most frequent outputs: great product (3028), not what i expected (497), great coffee (400), not bad (296), great tea (267)

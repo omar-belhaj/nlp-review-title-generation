@@ -1,0 +1,9 @@
+torch
+pandas
+numpy
+scikit-learn
+matplotlib
+rouge-score
+sacrebleu
+kagglehub
+gradio

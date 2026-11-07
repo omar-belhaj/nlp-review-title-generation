@@ -1,0 +1,10 @@
+model,rouge1,rouge2,bleu2,exact_match,distinct_titles,top_title_share,sentiment_balanced_accuracy
+most_frequent_title,0.066,0.011,1.26,0.008,0.000,1.000,0.500
+first_4_words,0.094,0.028,4.84,0.002,0.859,0.009,0.635
+lstm_baseline,0.105,0.021,3.03,0.011,0.005,0.456,0.822
+lstm_attention,0.153,0.042,5.76,0.017,0.167,0.157,0.753
+bilstm_attention,0.159,0.043,6.11,0.018,0.231,0.112,0.754
+imp_balanced,0.148,0.038,5.33,0.017,0.247,0.140,0.783
+imp_copy,0.163,0.047,6.26,0.019,0.364,0.148,0.725
+imp_more_data,0.180,0.054,7.25,0.020,0.347,0.087,0.809
+imp_combined,0.183,0.057,7.40,0.024,0.419,0.099,0.830
