@@ -61,7 +61,11 @@ Now, an example of a positive review of a lasagna :
 
 Here's a demo video of the lasagna example : 
 
-https://github.com/user-attachments/assets/7777e184-439c-487a-8001-d0bf18c9c7b3
+
+
+https://github.com/user-attachments/assets/7ca19468-1f28-4c2b-8df4-1faab0834225
+
+
 
 
 
